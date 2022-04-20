@@ -39,11 +39,13 @@
             <h2>{{ category.name }}</h2>
             {% for product in products %}
                 {% if product.category.name == category.name %}
-                    <div>
-                        <h3>{{ product.name }}</h3>
-                        <p>{{ product.description }}</p>
-                        <p>{{ product.price }}</p>
+                    <div class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <h4 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.name }}</h4>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">{{ product.description }}</p>
+                        <h5 class="text-sm text-gray-500 dark:text-gray-400">{{ product.price }}</h5>
                     </div>
+
+
                 {% endif %}
 
             {% endfor %}
