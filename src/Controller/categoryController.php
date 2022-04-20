@@ -28,7 +28,6 @@ class categoryController extends AbstractController
         }
 
         return new Response($twig->render('forms/show_category.html.twig',[
-
             'category_form'=> $form->createView()
         ]));
     }

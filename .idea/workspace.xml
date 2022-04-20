@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added DB, start on DB insertions">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220419201059.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220420124507.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/categoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/productController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CategoryFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ProductFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/forms/show_category.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/forms/show_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added forms for inserting categories and products. Some checks added for fields.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.override.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DiningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DiningController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/categoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/categoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forms/show_category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/show_category.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,8 +173,16 @@
       <workItem from="1650284880871" duration="4053000" />
       <workItem from="1650301019529" duration="3562000" />
       <workItem from="1650390056042" duration="5155000" />
-      <workItem from="1650438824391" duration="11387000" />
+      <workItem from="1650438824391" duration="14482000" />
     </task>
+    <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
+      <created>1650468006543</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650468006543</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +202,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added DB, start on DB insertions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added DB, start on DB insertions" />
+    <MESSAGE value="added forms for inserting categories and products. Some checks added for fields." />
+    <option name="LAST_COMMIT_MESSAGE" value="added forms for inserting categories and products. Some checks added for fields." />
   </component>
 </project>
