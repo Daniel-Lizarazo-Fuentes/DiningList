@@ -17,11 +17,45 @@
 
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
+
     {% endblock %}
 </head>
 <body>
+<nav>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div>
+            <a
+                    class="inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                    href="/product/new"
+            >
+                New product
+            </a>
+        </div>
+        <div>
+            <a
+                    class="inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                    href="/category/new">
+                New category
+            </a>
+        </div>
+    {% endif %}
+
+    <div>
+        <a
+                class="inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                href="/{{ app.user ? 'logout' : 'login' }}"
+                @click="isOpen = false">
+            {{ app.user ? 'Logout' : 'Login' }}
+        </a>
+    </div>
+</nav>
 
 {% block body %}{% endblock %}
 </body>
-<script src="./{{ asset('functions.js') }}"></script>
+{% block javascript %}
+{{ encore_entry_script_tags('functions') }}
+
+{% endblock %}
+
 </html>

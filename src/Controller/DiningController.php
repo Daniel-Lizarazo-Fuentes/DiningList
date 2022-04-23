@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DiningController extends AbstractController
 {
-    #[Route("/")]
+    #[Route("/dashboard/", name: 'dashboard')]
     public function dashBoard(ManagerRegistry $doctrine): Response
     {
         $repository = $doctrine->getRepository(Category::class);
