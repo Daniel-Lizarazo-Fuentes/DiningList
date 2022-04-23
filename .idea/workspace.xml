@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="login, registration and logout.&#10;Admin user and shielded pages from non admins">
-      <change afterPath="$PROJECT_DIR$/templates/dining/homepage.html.twig" afterDir="false" />
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="Added default homepage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DiningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DiningController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dining/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/homepage.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650725038362</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added default homepage">
+      <created>1650748587712</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650748587712</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +247,7 @@
     <MESSAGE value="made dashboard show products, grouped per category" />
     <MESSAGE value="added hr under li items" />
     <MESSAGE value="login, registration and logout.&#10;Admin user and shielded pages from non admins" />
-    <option name="LAST_COMMIT_MESSAGE" value="login, registration and logout.&#10;Admin user and shielded pages from non admins" />
+    <MESSAGE value="Added default homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added default homepage" />
   </component>
 </project>
