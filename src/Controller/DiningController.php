@@ -12,6 +12,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DiningController extends AbstractController
 {
+    #[Route("/", name: 'homepage')]
+    public function homePage(): Response
+    {
+        return $this->render('dining/homepage.html.twig', []);
+    }
+
     #[Route("/dashboard/", name: 'dashboard')]
     public function dashBoard(ManagerRegistry $doctrine): Response
     {
