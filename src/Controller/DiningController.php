@@ -34,24 +34,20 @@ class DiningController extends AbstractController
             'products' => $products
         ]);
     }
+    #[Route("/product/{id}")]
+    public function showProduct(ManagerRegistry $doctrine, int $id): Response
+    {
+        $product = $doctrine->getRepository(Product::class)->find($id);
 
-//    #[Route("/product/{id}")]
-//    public function showProduct(ManagerRegistry $doctrine, int $id): Response
-//    {
-//        $product = $doctrine->getRepository(Product::class)->find($id);
-//
-//        if (!$product) {
-//            throw $this->createNotFoundException(
-//                'No product found for id ' . $id
-//            );
-//        }
-//
-//        return new Response('Check out this great product: ' . $product->getName());
-//
-//        // or render a template
-//        // in the template, print things with {{ product.name }}
-//        // return $this->render('product/show.html.twig', ['product' => $product]);
-//    }
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id ' . $id
+            );
+        }
+
+        return $this->render('dining/show_product.html.twig', ['product' => $product]);
+    }
+
 //
 //    #[Route("/category/{id}")]
 //    public function showCategory(ManagerRegistry $doctrine, int $id): Response
