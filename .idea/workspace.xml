@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="Added default homepage">
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added product page">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20220425220332.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20220426170629.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/OrderLine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AddOrderLineType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CartRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/OrderLineRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/OrderRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dining/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DiningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DiningController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/productController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dining/show_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/show_product.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +198,7 @@
       <workItem from="1650620357799" duration="969000" />
       <workItem from="1650621350839" duration="453000" />
       <workItem from="1650621848495" duration="4444000" />
+      <workItem from="1650988596497" duration="5241000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>

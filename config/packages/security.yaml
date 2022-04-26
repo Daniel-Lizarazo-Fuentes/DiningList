@@ -40,6 +40,7 @@ security:
          - { path: ^/product/new, roles: ROLE_ADMIN }
          - { path: ^/category/new, roles: ROLE_ADMIN }
          - { path: ^/dashboard, roles: ROLE_USER }
+         - { path: ^/product/, roles: ROLE_USER }
 
 when@test:
     security:

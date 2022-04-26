@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Order;
+use App\Entity\OrderLine;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
@@ -29,24 +31,22 @@ class DiningController extends AbstractController
         // look for *all* Product objects
         $products = $repository->findAll();
 
+        $repository = $doctrine->getRepository(OrderLine::class);
+        // look for *all* Product objects
+        $orderLines = $repository->findAll();
+
+        $repository = $doctrine->getRepository(Order::class);
+        // look for *all* Product objects
+        $orders = $repository->findAll();
+
         return $this->render('dining/dashboard.html.twig', [
             'categories' => $categories,
-            'products' => $products
+            'products' => $products,
+            'orderLines'=>$orderLines,
+            'orders' => $orders
         ]);
     }
-    #[Route("/product/{id}")]
-    public function showProduct(ManagerRegistry $doctrine, int $id): Response
-    {
-        $product = $doctrine->getRepository(Product::class)->find($id);
 
-        if (!$product) {
-            throw $this->createNotFoundException(
-                'No product found for id ' . $id
-            );
-        }
-
-        return $this->render('dining/show_product.html.twig', ['product' => $product]);
-    }
 
 //
 //    #[Route("/category/{id}")]

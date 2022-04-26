@@ -8,12 +8,19 @@
     <h2>{{ product.price }} €</h2>
     <hr>
     <b>Description: </b>{{ product.description }}
-    <form class="mt-4 p-4" method="post">
+    {{ form_start(form, {'attr': {'class': 'mt-4 p-4'}}) }}
+    <div class="">
+        {{ form_label(form.quantity) }}
+        {{ form_widget(form.quantity, {
+            'attr': {
+                'class': ' ' ~ (form.quantity.vars.valid ? '' : 'is-invalid')
+            }
+        }) }}
         <div class="">
-            <label for="quantity">Quantity</label>
-            <input type="number" class="" id="quantity">
+            {{ form_errors(form.quantity) }}
         </div>
-        <button class="">Add to Cart</button>
-    </form>
+    </div>
+    {{ form_widget(form.add, {'attr': {'class': 'w-25'}}) }}
+    {{ form_end(form) }}
 
 {% endblock %}
