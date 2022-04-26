@@ -6,6 +6,7 @@ use App\Entity\OrderLine;
 use App\Entity\Cart;
 use App\Entity\Order;
 use App\Entity\Product;
+use App\Entity\User;
 use App\Form\AddOrderLineType;
 use App\Form\ProductFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -26,8 +27,9 @@ class productController extends AbstractController
         $this->security = $security;
     }
 
+
     #[Route('/product/new')]
-    public function showForm(Environment $twig, Request $request, EntityManagerInterface $entityManager)
+    public function showForm(Environment $twig, Request $request, EntityManagerInterface $entityManager): Response
     {
         $product = new Product();
         $form = $this->createForm(ProductFormType::class, $product);
@@ -47,7 +49,7 @@ class productController extends AbstractController
     }
 
     #[Route("/product/{id}")]
-    public function showProduct(ManagerRegistry $doctrine, int $id, Environment $twig, Request $request, EntityManagerInterface $entityManager)
+    public function showProduct(ManagerRegistry $doctrine, int $id, Environment $twig, Request $request, EntityManagerInterface $entityManager): Response
     {
         $orderLine = new OrderLine();
         $form = $this->createForm(AddOrderLineType::class, $orderLine);

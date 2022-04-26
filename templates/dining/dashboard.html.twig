@@ -36,7 +36,7 @@
                                         <h5 class="text-sm text-gray-500 dark:text-gray-400 mb-4">
                                             €{{ product.price / 100 }}</h5>
                                         <a href="/product/{{ product.id }}"
-                                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                             Add to cart
                                         </a>
                                     </header>
@@ -54,6 +54,31 @@
             </div>
         </div>
     {% endfor %}
+
+    <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+            <div class="p-6">
+                <h2 class="text-lg leading-6 font-medium text-gray-900">Current cart</h2>
+                {% for order in cart.orders %}
+                    {% if order.status == "Open" %}
+                        {% for orderLine in order.orderLines %}
+                            <div class="mb-4">
+                                <p class="mt-1 text-sm text-gray-500">Product: {{ orderLine.product.name }}</p>
+                                <p class="mt-1 text-sm text-gray-500">Quantity: {{ orderLine.quantity }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                {% endfor %}
+
+                <a href="#"
+                   class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
+                    order
+                </a>
+            </div>
+        </div>
+    </div>
+
 
 
 {% endblock %}
