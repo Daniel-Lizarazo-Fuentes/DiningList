@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\OrderLineRepository;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OrderLineRepository::class)]

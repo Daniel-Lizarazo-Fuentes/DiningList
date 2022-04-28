@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your Order{% endblock %}
+
+{% block body %}
+    <div id="ShowOrderTable">
+    {% for orderLine in order.orderLines %}
+        <p> Product: {{ orderLine.product.name }}</p>
+        <p>Quantity: {{ orderLine.quantity }}</p>
+        <a href="/orderline/delete/{{ orderLine.id }}">Delete</a>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

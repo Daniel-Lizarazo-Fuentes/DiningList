@@ -65,16 +65,19 @@
                             <div class="mb-4">
                                 <p class="mt-1 text-sm text-gray-500">Product: {{ orderLine.product.name }}</p>
                                 <p class="mt-1 text-sm text-gray-500">Quantity: {{ orderLine.quantity }}</p>
+
                             </div>
+
                         {% endfor %}
+                        <a href="/order/{{ order.id }}"
+                           class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
+                            order
+                        </a>
                     {% endif %}
 
                 {% endfor %}
 
-                <a href="#"
-                   class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
-                    order
-                </a>
+
             </div>
         </div>
     </div>

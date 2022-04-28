@@ -23,3 +23,5 @@ if (document.getElementById("categoryNav") != null) {
         });
     }
 }
+
+

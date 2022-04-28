@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="Added cart and ordering of products (Orderline = product + quantiy)">
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added current cart to dashboard">
+      <change afterPath="$PROJECT_DIR$/src/Controller/orderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/orderLineController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ConfirmOrderType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dining/show_order.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/javascript/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascript/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DiningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DiningController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/productController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/OrderLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderLine.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +191,9 @@
       <workItem from="1650620357799" duration="969000" />
       <workItem from="1650621350839" duration="453000" />
       <workItem from="1650621848495" duration="4444000" />
-      <workItem from="1650988596497" duration="7836000" />
+      <workItem from="1650988596497" duration="8210000" />
+      <workItem from="1651092819432" duration="5025000" />
+      <workItem from="1651174827177" duration="1816000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -230,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650993979998</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added current cart to dashboard">
+      <created>1651011086141</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651011086141</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +270,7 @@
     <MESSAGE value="login, registration and logout.&#10;Admin user and shielded pages from non admins" />
     <MESSAGE value="Added default homepage" />
     <MESSAGE value="Added cart and ordering of products (Orderline = product + quantiy)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added cart and ordering of products (Orderline = product + quantiy)" />
+    <MESSAGE value="added current cart to dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="added current cart to dashboard" />
   </component>
 </project>

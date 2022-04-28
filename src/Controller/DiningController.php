@@ -51,22 +51,5 @@ class DiningController extends AbstractController
     }
 
 
-//
-//    #[Route("/category/{id}")]
-//    public function showCategory(ManagerRegistry $doctrine, int $id): Response
-//    {
-//        $category = $doctrine->getRepository(Category::class)->find($id);
-//
-//        if (!$category) {
-//            throw $this->createNotFoundException(
-//                'No category found for id ' . $id
-//            );
-//        }
-//
-//        return new Response('This category is: ' . $category->getName());
-//
-//        // or render a template
-//        // in the template, print things with {{ product.name }}
-//        // return $this->render('product/show.html.twig', ['product' => $product]);
-//    }
+
 }
