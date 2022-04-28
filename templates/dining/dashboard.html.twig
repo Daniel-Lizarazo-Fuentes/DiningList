@@ -1,86 +1,108 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <nav id="categoryNav" class="container my-12 mx-auto px-4 md:px-12">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
-            <div class="w-full block mw-auto">
-                <ul class="flex mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
-                    {% for row in categories %}
-                        <li class="border-b border-gray-200">
-                            <button id="button{{ row.name }}"
-                                    class=" cursor-pointer block py-2 pr-4 pl-3 rounded md:bg-transparent text-gray-700 md:p-0 dark:text-white hover:text-orange-400"
-                            >{{ row.name }}</button>
 
-                        </li>
-                    {% endfor %}
-                </ul>
+    <div class="container my-12 px-4 md:px-12 flex flex-wrap content-start">
+        <img class="h-96 rounded"
+             src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pabell-c3-b3n-criollo-rice-shredded-beef-fried-plantain-royalty-free-image-1635263964.jpg"
+             alt="Food">
+        <div class="ml-12 ">
+            <div class=" lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+                <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                    <div class="p-6">
+                        <h2 class="text-lg leading-6 font-medium text-gray-900">Current cart</h2>
+                        <div type="button" class="mt-4 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Pick at the kitchen</div>
+                        {% for order in cart.orders %}
+                            {% if order.status == "Open" %}
+                                {% for orderLine in order.orderLines %}
+                                    <div class="mb-4 flex pb-2 border-b border-gray-200">
+                                        <p class="mt-1 mr-8 text-sm text-gray-600">{{ orderLine.quantity }} </p>
+                                        <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ orderLine.product.name }}</p>
+                                        <p class="mt-1 text-sm text-gray-800">€{{ orderLine.product.price }}</p>
+
+                                    </div>
+
+                                {% endfor %}
+                                <a href="/order/{{ order.id }}"
+                                   class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
+                                    order
+                                </a>
+                            {% endif %}
+
+                        {% endfor %}
+
+
+                    </div>
+                </div>
             </div>
+
         </div>
-    </nav>
 
-    {% for category in categories %}
-        <div id="display{{ category.name }}" class="hidden">
-            <div class="container my-12 mx-auto px-4 md:px-12">
-                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ category.name }}</h2>
-                <p class="text-base text-gray-600">{{ category.description }}</p>
-                <div class="flex flex-wrap -mx-1 lg:-mx-4">
-                    {% for product in products %}
-                        {% if product.category.name == category.name %}
 
-                            <!-- Column -->
-                            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-                                <!-- card -->
-                                <div class="overflow-hidden rounded-lg border border-gray-200 ">
+        <nav id="categoryNav" class="container my-12 mx-auto px-4 md:px-12">
+            <div class="container flex flex-wrap justify-between items-center mx-auto">
+                <div class="w-full block mw-auto">
+                    <ul class="flex mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
+                        {% for row in categories %}
+                            <li class="border-b border-gray-200">
+                                <button id="button{{ row.name }}"
+                                        class=" cursor-pointer block py-2 pr-4 pl-3 rounded md:bg-transparent text-gray-700 md:p-0 dark:text-white hover:text-orange-400"
+                                >{{ row.name }}</button>
+
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% for category in categories %}
+            <div id="display{{ category.name }}" class="hidden">
+                <div class="container my-12 mx-auto px-4 md:px-12">
+                    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ category.name }}</h2>
+                    <p class="text-base text-gray-600">{{ category.description }}</p>
+                    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+                        {% for product in products %}
+                            {% if product.category.name == category.name %}
+
+                                <div class="overflow-hidden rounded-lg border border-gray-200 flex justify-between m-4">
                                     <header class="flex flex-col items-left justify-between leading-tight p-4 md:p-4">
                                         <h4 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.name }}</h4>
                                         <p class="font-normal text-gray-700 dark:text-gray-400">{{ product.description }}</p>
                                         <h5 class="text-sm text-gray-500 dark:text-gray-400 mb-4">
                                             €{{ product.price / 100 }}</h5>
                                         <a href="/product/{{ product.id }}"
-                                           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mt-4 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                             Add to cart
                                         </a>
                                     </header>
+                                    <div>
+                                        <img class="rounded-bl-lg" src="https://via.placeholder.com/150"
+                                             alt="Placeholder image">
+                                    </div>
                                 </div>
                                 <!-- END card -->
 
-                            </div>
-                            <!-- END Column -->
 
-                        {% endif %}
 
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-
-    <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
-        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
-            <div class="p-6">
-                <h2 class="text-lg leading-6 font-medium text-gray-900">Current cart</h2>
-                {% for order in cart.orders %}
-                    {% if order.status == "Open" %}
-                        {% for orderLine in order.orderLines %}
-                            <div class="mb-4">
-                                <p class="mt-1 text-sm text-gray-500">Product: {{ orderLine.product.name }}</p>
-                                <p class="mt-1 text-sm text-gray-500">Quantity: {{ orderLine.quantity }}</p>
-
-                            </div>
+                            {% endif %}
 
                         {% endfor %}
-                        <a href="/order/{{ order.id }}"
-                           class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
-                            order
-                        </a>
-                    {% endif %}
 
-                {% endfor %}
-
-
+                    </div>
+                </div>
             </div>
-        </div>
+        {% endfor %}
+
+
+
     </div>
+
+
+
+
+
+
+
 
 
 

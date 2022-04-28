@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added deletion of orderLines before confirming order">
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added confirmation of order (refreash needed for updated view)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/orderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/orderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dining/show_order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/show_order.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/forms" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -187,7 +186,8 @@
       <workItem from="1650621848495" duration="4444000" />
       <workItem from="1650988596497" duration="8210000" />
       <workItem from="1651092819432" duration="5025000" />
-      <workItem from="1651174827177" duration="3630000" />
+      <workItem from="1651174827177" duration="4385000" />
+      <workItem from="1651182029826" duration="2356000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651176726091</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added confirmation of order (refreash needed for updated view)">
+      <created>1651179509981</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651179509981</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +280,7 @@
     <MESSAGE value="Added cart and ordering of products (Orderline = product + quantiy)" />
     <MESSAGE value="added current cart to dashboard" />
     <MESSAGE value="added deletion of orderLines before confirming order" />
-    <option name="LAST_COMMIT_MESSAGE" value="added deletion of orderLines before confirming order" />
+    <MESSAGE value="added confirmation of order (refreash needed for updated view)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added confirmation of order (refreash needed for updated view)" />
   </component>
 </project>
