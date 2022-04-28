@@ -4,12 +4,12 @@
 
 {% block body %}
     <div id="ShowOrderTable">
-    {% for orderLine in order.orderLines %}
-        <p> Product: {{ orderLine.product.name }}</p>
-        <p>Quantity: {{ orderLine.quantity }}</p>
-        <a href="/orderline/delete/{{ orderLine.id }}">Delete</a>
-    {% endfor %}
-</div>
-
+        {% for orderLine in order.orderLines %}
+            <p> Product: {{ orderLine.product.name }}</p>
+            <p>Quantity: {{ orderLine.quantity }}</p>
+            <a href="/orderline/delete/{{ orderLine.id }}">Delete</a>
+        {% endfor %}
+    </div>
+    <a href="/order/confirm/{{ order.id }}">Confirm Order</a>
 
 {% endblock %}

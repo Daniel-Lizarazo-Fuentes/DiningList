@@ -23,11 +23,29 @@ class orderController extends AbstractController
             );
         }
 
+        if($order->getStatus()==="Open"){
+            return $this->render('dining/show_order.html.twig', ['order' => $order]);
+        }
+        else{
+            return new Response("The order with ID ".$order->getId()." has been paid!");
+        }
 
-
-
-         return $this->render('dining/show_order.html.twig', ['order' => $order]);
     }
 
+    #[Route("/order/confirm/{id}")]
+    public function confirmOrder(ManagerRegistry $doctrine, int $id): Response{
+        $entityManager = $doctrine->getManager();
+        $order = $entityManager->getRepository(Order::class)->find($id);
+        if(!$order){
+            throw $this->createNotFoundException(
+                'No order found for id '.$id
+            );
+        }
+
+        $order->setStatus("Paid");
+        $entityManager->flush();
+
+        return new Response(null, 204);
+    }
 
 }
