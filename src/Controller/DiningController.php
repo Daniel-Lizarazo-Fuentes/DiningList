@@ -4,8 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Cart;
 use App\Entity\Category;
-use App\Entity\Order;
-use App\Entity\OrderLine;
 use App\Entity\Product;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
