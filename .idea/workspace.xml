@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="new better looking dashboard">
-      <change afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/UserEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserEventRepository.php" afterDir="false" />
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="start on admin pannel and added constrain for email (@extendas.com)">
+      <change afterPath="$PROJECT_DIR$/config/packages/knp_snappy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DiningList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiningList.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DiningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DiningController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +141,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/common" />
       <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
     </include_path>
   </component>
   <component name="ProjectId" id="27sJIm8A8EA4rtNPaXQJMh32nFc" />
@@ -193,7 +199,7 @@
       <workItem from="1651092819432" duration="5025000" />
       <workItem from="1651174827177" duration="4385000" />
       <workItem from="1651182029826" duration="2668000" />
-      <workItem from="1651563016686" duration="1780000" />
+      <workItem from="1651563016686" duration="4241000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -265,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651184711667</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="start on admin pannel and added constrain for email (@extendas.com)">
+      <created>1651564915216</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651564915216</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +308,7 @@
     <MESSAGE value="added deletion of orderLines before confirming order" />
     <MESSAGE value="added confirmation of order (refreash needed for updated view)" />
     <MESSAGE value="new better looking dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="new better looking dashboard" />
+    <MESSAGE value="start on admin pannel and added constrain for email (@extendas.com)" />
+    <option name="LAST_COMMIT_MESSAGE" value="start on admin pannel and added constrain for email (@extendas.com)" />
   </component>
 </project>
