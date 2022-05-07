@@ -24,7 +24,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Email(
         message: 'The email {{ value }} is not a valid email.',
     )]
-    #[Assert\Regex('.*\@extendas\.com')]
+    #[Assert\Regex('/.*@extendas\.com/')]
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
 
