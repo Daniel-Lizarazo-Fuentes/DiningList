@@ -10,25 +10,31 @@
                 <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
                     <div class="p-6">
                         <h2 class="text-lg leading-6 font-medium text-gray-900">Current cart</h2>
-                        <div type="button" class="mt-4 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Pick at the kitchen</div>
-                        {% for order in cart.orders %}
-                            {% if order.status == "Open" %}
-                                {% for orderLine in order.orderLines %}
-                                    <div class="mb-4 flex pb-2 border-b border-gray-200">
-                                        <p class="mt-1 mr-8 text-sm text-gray-600">{{ orderLine.quantity }} </p>
-                                        <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ orderLine.product.name }}</p>
-                                        <p class="mt-1 text-sm text-gray-800">€{{ orderLine.product.price }}</p>
+                        <div type="button"
+                             class="mt-4 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                            Pick at the kitchen
+                        </div>
+                        {% if cart.orders | default("") %}
+                            {% for order in cart.orders %}
+                                {% if order.status == "Open" %}
+                                    {% for orderLine in order.orderLines %}
+                                        <div class="mb-4 flex pb-2 border-b border-gray-200">
+                                            <p class="mt-1 mr-8 text-sm text-gray-600">{{ orderLine.quantity }} </p>
+                                            <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ orderLine.product.name }}</p>
+                                            <p class="mt-1 text-sm text-gray-800">
+                                                €{{ orderLine.product.price /100 }}</p>
 
-                                    </div>
+                                        </div>
 
-                                {% endfor %}
-                                <a href="/order/{{ order.id }}"
-                                   class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
-                                    order
-                                </a>
-                            {% endif %}
+                                    {% endfor %}
+                                    <a href="/order/{{ order.id }}"
+                                       class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
+                                        order
+                                    </a>
+                                {% endif %}
 
-                        {% endfor %}
+                            {% endfor %}
+                        {% endif %}
 
 
                     </div>
@@ -80,30 +86,14 @@
                                              alt="Placeholder image">
                                     </div>
                                 </div>
-                                <!-- END card -->
-
-
-
                             {% endif %}
-
                         {% endfor %}
 
                     </div>
                 </div>
             </div>
         {% endfor %}
-
-
-
     </div>
-
-
-
-
-
-
-
-
 
 
 {% endblock %}
