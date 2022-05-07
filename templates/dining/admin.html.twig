@@ -1,19 +1,23 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <p>All open orders:</p>
-    {% for cart in carts %}
-        {% for order in cart.orders %}
-            {% if order.status == "Open" %}
-                {% for orderLine in order.orderLines %}
-                    <div class="mb-4 flex pb-2 border-b border-gray-200">
-                        <p class="mt-1 mr-8 text-sm text-gray-600">{{ orderLine.quantity }} </p>
-                        <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ orderLine.product.name }}</p>
-                        <p class="mt-1 text-sm text-gray-800">€{{ orderLine.product.price /100 }}</p>
-                    </div>
+    {% if carts | default("") %}
+        {% for cart in carts %}
 
-                {% endfor %}
+            {% for order in cart.orders %}
+                {% if order.status == "Open" %}
+                    {% for orderLine in order.orderLines %}
+                        <div class="mb-4 flex pb-2 border-b border-gray-200">
+                            <p class="mt-1 mr-8 text-sm text-gray-600">{{ orderLine.quantity }} </p>
+                            <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ orderLine.product.name }}</p>
+                            <p class="mt-1 text-sm text-gray-800">€{{ orderLine.product.price /100 }}</p>
+                        </div>
 
-            {% endif %}
+                    {% endfor %}
+
+                {% endif %}
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
+        <a href="/admin/confirmall/">Confirm all open</a>
+    {% endif %}
 {% endblock %}

@@ -31,6 +31,27 @@ class adminController extends AbstractController
         ]);
     }
 
+    #[Route('/admin/confirmall')]
+    public function confirmAll(ManagerRegistry $doctrine)
+    {
+        $entityManager = $doctrine->getManager();
+        $repository = $doctrine->getRepository(Cart::class);
+        $carts = $repository->findAll();
+
+        foreach ($carts as $cart) {
+            if ($cart->getOrders()) {
+                foreach ($cart->getOrders() as $order) {
+                    if ($order->getStatus() === "Open") {
+                        $order->setStatus("Paid");
+                    }
+                }
+            }
+        }
+
+        $entityManager->flush();
+        return new Response(null, 204);
+    }
+
     #[Route("/pdf")]
     public function generatePdf(Pdf $snappy): PdfResponse
     {

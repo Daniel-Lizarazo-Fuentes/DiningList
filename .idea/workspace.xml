@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added snappy for pdfs">
-      <change afterPath="$PROJECT_DIR$/templates/dining/admin.html.twig" afterDir="false" />
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="basic admin page (shows all cart open orderLines), generates pdf using snappy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/knp_snappy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/knp_snappy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dining/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/admin.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +195,7 @@
       <workItem from="1651563016686" duration="4241000" />
       <workItem from="1651684420923" duration="70000" />
       <workItem from="1651850411524" duration="2596000" />
-      <workItem from="1651916967502" duration="7643000" />
+      <workItem from="1651916967502" duration="9300000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -284,7 +281,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651684484881</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="edited regex">
+      <created>1651931886699</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1651931886699</updated>
+    </task>
+    <task id="LOCAL-00014" summary="basic admin page (shows all cart open orderLines), generates pdf using snappy">
+      <created>1651931929358</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1651931929358</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +327,8 @@
     <MESSAGE value="new better looking dashboard" />
     <MESSAGE value="start on admin pannel and added constrain for email (@extendas.com)" />
     <MESSAGE value="added snappy for pdfs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added snappy for pdfs" />
+    <MESSAGE value="edited regex" />
+    <MESSAGE value="basic admin page (shows all cart open orderLines), generates pdf using snappy" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic admin page (shows all cart open orderLines), generates pdf using snappy" />
   </component>
 </project>
