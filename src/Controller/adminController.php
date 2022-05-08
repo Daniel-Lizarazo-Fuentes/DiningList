@@ -44,21 +44,21 @@ class adminController extends AbstractController
         ini_set('max_execution_time', 300);
 
 
-//        $entityManager = $doctrine->getManager();
-//        $repository = $doctrine->getRepository(Cart::class);
-//        $carts = $repository->findAll();
-//
-//        foreach ($carts as $cart) {
-//            if ($cart->getOrders()) {
-//                foreach ($cart->getOrders() as $order) {
-//                    if ($order->getStatus() === "Open") {
-//                        $order->setStatus("Paid");
-//                    }
-//                }
-//            }
-//        }
-//
-//        $entityManager->flush();
+        $entityManager = $doctrine->getManager();
+        $repository = $doctrine->getRepository(Cart::class);
+        $carts = $repository->findAll();
+
+        foreach ($carts as $cart) {
+            if ($cart->getOrders()) {
+                foreach ($cart->getOrders() as $order) {
+                    if ($order->getStatus() === "Open") {
+                        $order->setStatus("Paid");
+                    }
+                }
+            }
+        }
+
+        $entityManager->flush();
 
         return new PdfResponse(
             $snappy->getOutputFromHtml($html), 'file.pdf'
