@@ -26,8 +26,28 @@ class adminController extends AbstractController
         $repository = $doctrine->getRepository(Cart::class);
         $carts = $repository->findAll();
 
+        $totalProducts = [];
+
+        foreach ($carts as $cart) {
+            if ($cart->getOrders()) {
+                foreach ($cart->getOrders() as $order) {
+                    if ($order->getStatus() === "Open") {
+                        foreach ($order->getOrderLines() as $orderLine) {
+                            $key = $orderLine->getProduct()->getName();
+                            if (array_key_exists($key, $totalProducts)) {
+                                $totalProducts[$key] = $orderLine->getQuantity() + $totalProducts[$key];
+                            } else {
+                                $totalProducts[$key] = $orderLine->getQuantity();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         return $this->render('dining/admin.html.twig', [
-            'carts' => $carts
+            'carts' => $carts,
+            'totalProducts' => $totalProducts
         ]);
     }
 

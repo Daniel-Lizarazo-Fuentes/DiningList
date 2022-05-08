@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="basic admin page (shows all cart open orderLines), generates pdf using snappy">
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="implemented confirm all open orders as an admin">
+      <change afterPath="$PROJECT_DIR$/templates/dining/openordersprint.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dining/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/admin.html.twig" afterDir="false" />
     </list>
@@ -195,7 +195,8 @@
       <workItem from="1651563016686" duration="4241000" />
       <workItem from="1651684420923" duration="70000" />
       <workItem from="1651850411524" duration="2596000" />
-      <workItem from="1651916967502" duration="9300000" />
+      <workItem from="1651916967502" duration="11039000" />
+      <workItem from="1652015583535" duration="1716000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -295,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651931929358</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="implemented confirm all open orders as an admin">
+      <created>1651934729763</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1651934729763</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,6 +337,7 @@
     <MESSAGE value="added snappy for pdfs" />
     <MESSAGE value="edited regex" />
     <MESSAGE value="basic admin page (shows all cart open orderLines), generates pdf using snappy" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic admin page (shows all cart open orderLines), generates pdf using snappy" />
+    <MESSAGE value="implemented confirm all open orders as an admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented confirm all open orders as an admin" />
   </component>
 </project>
