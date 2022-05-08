@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="implemented confirm all open orders as an admin">
-      <change afterPath="$PROJECT_DIR$/templates/dining/openordersprint.html.twig" afterDir="false" />
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="sum of all productorders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dining/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/admin.html.twig" afterDir="false" />
@@ -169,6 +168,16 @@
       <recent name="C:\Users\danie\programming\Personal\DiningList\assets\javascripts" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="adminController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Controller/adminController.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.adminController.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -196,7 +205,7 @@
       <workItem from="1651684420923" duration="70000" />
       <workItem from="1651850411524" duration="2596000" />
       <workItem from="1651916967502" duration="11039000" />
-      <workItem from="1652015583535" duration="1716000" />
+      <workItem from="1652015583535" duration="5301000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -303,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651934729763</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="sum of all productorders">
+      <created>1652017445874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652017445874</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +354,7 @@
     <MESSAGE value="edited regex" />
     <MESSAGE value="basic admin page (shows all cart open orderLines), generates pdf using snappy" />
     <MESSAGE value="implemented confirm all open orders as an admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented confirm all open orders as an admin" />
+    <MESSAGE value="sum of all productorders" />
+    <option name="LAST_COMMIT_MESSAGE" value="sum of all productorders" />
   </component>
 </project>

@@ -27,17 +27,31 @@ class adminController extends AbstractController
         $carts = $repository->findAll();
 
         $totalProducts = [];
+        $totalPerUser = [];
 
         foreach ($carts as $cart) {
             if ($cart->getOrders()) {
                 foreach ($cart->getOrders() as $order) {
                     if ($order->getStatus() === "Open") {
                         foreach ($order->getOrderLines() as $orderLine) {
+
                             $key = $orderLine->getProduct()->getName();
+                            $orderLineQuantity = $orderLine->getQuantity();
+
                             if (array_key_exists($key, $totalProducts)) {
-                                $totalProducts[$key] = $orderLine->getQuantity() + $totalProducts[$key];
+                                $totalProducts[$key] = $orderLineQuantity + $totalProducts[$key];
                             } else {
-                                $totalProducts[$key] = $orderLine->getQuantity();
+                                $totalProducts[$key] = $orderLineQuantity;
+                            }
+                            $userKey = $cart->getUID()->getEmail();
+                            if (array_key_exists($userKey, $totalPerUser)) {
+                                if (isset($totalPerUser[$userKey][$key])) {
+                                    $totalPerUser[$userKey][$key] =  $orderLineQuantity + $totalPerUser[$userKey][$key];
+                                } else {
+                                    $totalPerUser[$userKey] += [$key => $orderLineQuantity];
+                                }
+                            } else {
+                                $totalPerUser[$userKey] = [$key => $orderLineQuantity];
                             }
                         }
                     }
@@ -45,9 +59,19 @@ class adminController extends AbstractController
             }
         }
 
+        $repository = $doctrine->getRepository(Product::class);
+        $products = $repository->findAll();
+
+        $productPrices =[];
+        foreach ($products as $product){
+            $productPrices[$product->getName()]=$product->getPrice();
+        }
+
+
         return $this->render('dining/admin.html.twig', [
-            'carts' => $carts,
-            'totalProducts' => $totalProducts
+            'productPrices' => $productPrices,
+            'totalProducts' => $totalProducts,
+            'totalPerUser' => $totalPerUser
         ]);
     }
 

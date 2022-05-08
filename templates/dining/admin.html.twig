@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <p>Total products</p>
+
+
+    <p>Total ordered products</p>
     {% if totalProducts | default("") %}
         {% for key, value in totalProducts %}
 
@@ -13,22 +15,25 @@
 
     {% endif %}
 
-    <p>All open orders:</p>
-    {% if carts | default("") %}
-        {% for cart in carts %}
-            {% for order in cart.orders %}
-                {% if order.status == "Open" %}
-                    {% for orderLine in order.orderLines %}
-                        <div class="mb-4 flex pb-2 border-b border-gray-200">
-                            <p class="mt-1 mr-8 text-sm text-gray-600">{{ orderLine.quantity }} </p>
-                            <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ orderLine.product.name }}</p>
-                            <p class="mt-1 mr-32 text-sm text-gray-800">€{{ orderLine.product.price /100 }}</p>
-                            <p class="mt-1 text-sm text-gray-800">{{ cart.uID.email }}</p>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+    <p>Orders per user</p>
+    {% if totalPerUser | default("") %}
+        {% for key, value in totalPerUser %}
+            <h2 class="mt-1 mr-8 text-sm text-gray-600 font-bold">{{ key }} </h2>
+            {% set total = 0 %}
+
+            {% for key, value in value %}
+                <div class="mb-4 flex pb-2 border-b border-gray-200">
+                    <p class="mt-1 mr-8 text-sm text-gray-600">{{ key }} </p>
+                    <p class="mt-1 mr-32 text-sm text-gray-800">{{ value }}</p>
+                    <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">€{{ (value*productPrices[key] )/100 }}</p>
+                    {% set total = total + value*productPrices[key]%}
+                </div>
             {% endfor %}
+           <h2>Total: €{{ total/100 }}</h2>
+
         {% endfor %}
-        <a href="/admin/confirmall/">Confirm all open orders and print!</a>
+
     {% endif %}
+
+
 {% endblock %}
