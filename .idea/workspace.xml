@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="Pdf print with table of total ordered per product and all orders per user">
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="added decent navbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dining/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/admin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dining/open_order_tables.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/open_order_tables.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +206,7 @@
       <workItem from="1651684420923" duration="70000" />
       <workItem from="1651850411524" duration="2596000" />
       <workItem from="1651916967502" duration="11039000" />
-      <workItem from="1652015583535" duration="9071000" />
+      <workItem from="1652015583535" duration="12283000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -333,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652023240717</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added decent navbar">
+      <created>1652029690075</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1652029690075</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +379,7 @@
     <MESSAGE value="sum of all productorders" />
     <MESSAGE value="made tables of total orders and orders per user (open)" />
     <MESSAGE value="Pdf print with table of total ordered per product and all orders per user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pdf print with table of total ordered per product and all orders per user" />
+    <MESSAGE value="added decent navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added decent navbar" />
   </component>
 </project>

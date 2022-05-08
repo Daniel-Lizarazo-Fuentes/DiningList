@@ -1,6 +1,6 @@
 {% extends 'entry.html.twig' %}
 {% block body %}
-    <p>Total ordered products</p>
+    <h2 class="text-3xl font-medium">Total ordered products</h2>
     {% if totalProducts | default("") %}
         {% for key, value in totalProducts %}
 
@@ -13,7 +13,7 @@
 
     {% endif %}
 
-    <p>Orders per user</p>
+    <h2 class="text-3xl font-medium mt-4">Orders per user</h2>
     {% if totalPerUser | default("") %}
         {% for key, value in totalPerUser %}
             <h2 class="mt-1 mr-8 text-sm text-gray-600 font-bold">{{ key }} </h2>

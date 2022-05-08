@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-
-
-    {{ include('dining/open_order_tables.html.twig') }}
-    <a href="/admin/confirmall/">Confirm all open orders and print!</a>
-
+    <div class="container my-12 px-4 md:px-12 ">
+        {{ include('dining/open_order_tables.html.twig') }}
+        <a class="mt-8 block w-1/2 bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900" href="/admin/confirmall/">Confirm all open orders and print!</a>
+    </div>
 {% endblock %}
