@@ -20,9 +20,53 @@ class adminController extends AbstractController
 
 
     #[Route("/admin")]
-    public function adminPage(ManagerRegistry $doctrine)
+    public function adminPage(ManagerRegistry $doctrine): Response
     {
+        $arrays = $this->getAdminArrays($doctrine);
+        return $this->render('dining/admin.html.twig', [
+            'productPrices' => $arrays[0],
+            'totalProducts' => $arrays[1],
+            'totalPerUser' => $arrays[2]
+        ]);
 
+    }
+
+    #[Route('/admin/confirmall')]
+    public function confirmAll(ManagerRegistry $doctrine, Pdf $snappy)
+    {
+        $arrays = $this->getAdminArrays($doctrine);
+        $html = $this->render('dining/open_order_tables.html.twig', [
+            'productPrices' => $arrays[0],
+            'totalProducts' => $arrays[1],
+            'totalPerUser' => $arrays[2]
+        ])->getContent();
+        $snappy->setOption('enable-local-file-access', true);
+        ini_set('max_execution_time', 300);
+
+
+//        $entityManager = $doctrine->getManager();
+//        $repository = $doctrine->getRepository(Cart::class);
+//        $carts = $repository->findAll();
+//
+//        foreach ($carts as $cart) {
+//            if ($cart->getOrders()) {
+//                foreach ($cart->getOrders() as $order) {
+//                    if ($order->getStatus() === "Open") {
+//                        $order->setStatus("Paid");
+//                    }
+//                }
+//            }
+//        }
+//
+//        $entityManager->flush();
+
+        return new PdfResponse(
+            $snappy->getOutputFromHtml($html), 'file.pdf'
+        );
+    }
+
+    public function getAdminArrays(ManagerRegistry $doctrine): array
+    {
         $repository = $doctrine->getRepository(Cart::class);
         $carts = $repository->findAll();
 
@@ -46,7 +90,7 @@ class adminController extends AbstractController
                             $userKey = $cart->getUID()->getEmail();
                             if (array_key_exists($userKey, $totalPerUser)) {
                                 if (isset($totalPerUser[$userKey][$key])) {
-                                    $totalPerUser[$userKey][$key] =  $orderLineQuantity + $totalPerUser[$userKey][$key];
+                                    $totalPerUser[$userKey][$key] = $orderLineQuantity + $totalPerUser[$userKey][$key];
                                 } else {
                                     $totalPerUser[$userKey] += [$key => $orderLineQuantity];
                                 }
@@ -62,49 +106,14 @@ class adminController extends AbstractController
         $repository = $doctrine->getRepository(Product::class);
         $products = $repository->findAll();
 
-        $productPrices =[];
-        foreach ($products as $product){
-            $productPrices[$product->getName()]=$product->getPrice();
+        $productPrices = [];
+        foreach ($products as $product) {
+            $productPrices[$product->getName()] = $product->getPrice();
         }
 
 
-        return $this->render('dining/admin.html.twig', [
-            'productPrices' => $productPrices,
-            'totalProducts' => $totalProducts,
-            'totalPerUser' => $totalPerUser
-        ]);
+        return [$productPrices, $totalProducts, $totalPerUser];
     }
 
-    #[Route('/admin/confirmall')]
-    public function confirmAll(ManagerRegistry $doctrine)
-    {
-        $entityManager = $doctrine->getManager();
-        $repository = $doctrine->getRepository(Cart::class);
-        $carts = $repository->findAll();
 
-        foreach ($carts as $cart) {
-            if ($cart->getOrders()) {
-                foreach ($cart->getOrders() as $order) {
-                    if ($order->getStatus() === "Open") {
-                        $order->setStatus("Paid");
-                    }
-                }
-            }
-        }
-
-        $entityManager->flush();
-        return new Response(null, 204);
-    }
-
-    #[Route("/pdf")]
-    public function generatePdf(Pdf $snappy): PdfResponse
-    {
-        $html = $this->renderView('dining/homepage.html.twig', []);
-        $snappy->setOption('enable-local-file-access', true);
-        ini_set('max_execution_time', 300);
-
-        return new PdfResponse(
-            $snappy->getOutputFromHtml($html), 'file.pdf'
-        );
-    }
 }

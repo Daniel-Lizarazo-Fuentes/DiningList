@@ -2,38 +2,7 @@
 {% block body %}
 
 
-    <p>Total ordered products</p>
-    {% if totalProducts | default("") %}
-        {% for key, value in totalProducts %}
-
-            <div class="mb-4 flex pb-2 border-b border-gray-200">
-                <p class="mt-1 mr-8 text-sm text-gray-600">{{ key }} </p>
-                <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ value }}</p>
-
-            </div>
-        {% endfor %}
-
-    {% endif %}
-
-    <p>Orders per user</p>
-    {% if totalPerUser | default("") %}
-        {% for key, value in totalPerUser %}
-            <h2 class="mt-1 mr-8 text-sm text-gray-600 font-bold">{{ key }} </h2>
-            {% set total = 0 %}
-
-            {% for key, value in value %}
-                <div class="mb-4 flex pb-2 border-b border-gray-200">
-                    <p class="mt-1 mr-8 text-sm text-gray-600">{{ key }} </p>
-                    <p class="mt-1 mr-32 text-sm text-gray-800">{{ value }}</p>
-                    <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">€{{ (value*productPrices[key] )/100 }}</p>
-                    {% set total = total + value*productPrices[key]%}
-                </div>
-            {% endfor %}
-           <h2>Total: €{{ total/100 }}</h2>
-
-        {% endfor %}
-
-    {% endif %}
-
+    {{ include('dining/open_order_tables.html.twig') }}
+    <a href="/admin/confirmall/">Confirm all open orders and print!</a>
 
 {% endblock %}
