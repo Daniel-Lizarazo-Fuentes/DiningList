@@ -3,13 +3,24 @@
 {% block title %}Your Order{% endblock %}
 
 {% block body %}
-    <div id="ShowOrderTable">
+
+
+    <div class="container my-12 px-4 md:px-12 ">
+        <div id="ShowOrderTable" class="mb-4 flex pb-2 border-b border-gray-200">
+            <p class="mt-1 mr-8 text-sm text-gray-600"> Product</p>
+            <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">Quantity</p>
+
+        </div>
         {% for orderLine in order.orderLines %}
-            <p> Product: {{ orderLine.product.name }}</p>
-            <p>Quantity: {{ orderLine.quantity }}</p>
-            <a href="/orderline/delete/{{ orderLine.id }}">Delete</a>
+            <div id="ShowOrderTable" class="mb-4 flex pb-2 border-b border-gray-200">
+                <p class="mt-1 mr-8 text-sm text-gray-600"> {{ orderLine.product.name }}</p>
+                <p class="mt-1 mr-32 text-sm text-gray-800 font-bold"> {{ orderLine.quantity }}</p>
+                <a href="/orderline/delete/{{ orderLine.id }}">Delete</a>
+            </div>
         {% endfor %}
+
+        <a class="mt-8 block w-1/2 bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
+           href="/order/confirm/{{ order.id }}">Confirm Order</a>
     </div>
-    <a href="/order/confirm/{{ order.id }}">Confirm Order</a>
 
 {% endblock %}

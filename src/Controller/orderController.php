@@ -27,6 +27,7 @@ class orderController extends AbstractController
             return $this->render('dining/show_order.html.twig', ['order' => $order]);
         }
         else{
+
             return new Response("The order with ID ".$order->getId()." has been paid!");
         }
 

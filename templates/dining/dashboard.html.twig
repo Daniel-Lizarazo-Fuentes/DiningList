@@ -12,7 +12,7 @@
                         <h2 class="text-lg leading-6 font-medium text-gray-900">Current cart</h2>
                         <div type="button"
                              class="mt-4 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Pick at the kitchen
+                            Pick up at the kitchen
                         </div>
                         {% if cart.orders | default("") %}
                             {% for order in cart.orders %}
@@ -23,9 +23,7 @@
                                             <p class="mt-1 mr-32 text-sm text-gray-800 font-bold">{{ orderLine.product.name }}</p>
                                             <p class="mt-1 text-sm text-gray-800">
                                                 €{{ orderLine.product.price /100 }}</p>
-
                                         </div>
-
                                     {% endfor %}
                                     <a href="/order/{{ order.id }}"
                                        class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Confirm
@@ -63,7 +61,7 @@
 
         {% for category in categories %}
             <div id="display{{ category.name }}" class="hidden">
-                <div class="container my-12 mx-auto px-4 md:px-12">
+                <div class="container my-12 mx-auto">
                     <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ category.name }}</h2>
                     <p class="text-base text-gray-600">{{ category.description }}</p>
                     <div class="flex flex-wrap -mx-1 lg:-mx-4">
@@ -71,13 +69,13 @@
                             {% if product.category.name == category.name %}
 
                                 <div class="overflow-hidden rounded-lg border border-gray-200 flex justify-between m-4">
-                                    <header class="flex flex-col items-left justify-between leading-tight p-4 md:p-4">
-                                        <h4 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.name }}</h4>
+                                    <header class="flex flex-col items-left justify-between leading-tight p-4 md:p-4  ">
+                                        <h4 class="mb-2  text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">{{ product.name }}</h4>
                                         <p class="font-normal text-gray-700 dark:text-gray-400">{{ product.description }}</p>
                                         <h5 class="text-sm text-gray-500 dark:text-gray-400 mb-4">
                                             €{{ product.price / 100 }}</h5>
                                         <a href="/product/{{ product.id }}"
-                                           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mt-4 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                           class="text-white bg-blue-700 text-center hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mt-4 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                             Add to cart
                                         </a>
                                     </header>
