@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="some styling">
-      <change afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/phpunit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DiningList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiningList.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="64e7a77b-f2a2-4ea2-a259-87dc8cc6fbe8" name="Changes" comment="more styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/orderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/orderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CategoryFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProductFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/dashboard.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dining/show_order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dining/show_order.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forms/show_category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/show_category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forms/show_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/show_product.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +243,7 @@
       <workItem from="1651850411524" duration="2596000" />
       <workItem from="1651916967502" duration="11039000" />
       <workItem from="1652015583535" duration="13024000" />
-      <workItem from="1652090015976" duration="2408000" />
+      <workItem from="1652090015976" duration="5159000" />
     </task>
     <task id="LOCAL-00001" summary="added forms for inserting categories and products. Some checks added for fields.">
       <created>1650468006543</created>
@@ -390,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652035200325</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="more styling">
+      <created>1652107471706</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1652107471706</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,6 +432,7 @@
     <MESSAGE value="Pdf print with table of total ordered per product and all orders per user" />
     <MESSAGE value="added decent navbar" />
     <MESSAGE value="some styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="some styling" />
+    <MESSAGE value="more styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="more styling" />
   </component>
 </project>
